@@ -1,0 +1,73 @@
+\hypertarget{main_8c}{}\doxysection{/\+Users/tiagorainho/\+Desktop/\+University/\+Masters/2/\+CLE/\+Pratica/assignment 1/\+Matrix-\/\+Determinant-\/\+Computing/src/main.c File Reference}
+\label{main_8c}\index{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/main.c@{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/main.c}}
+
+
+Program computing the matrices inside files.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}shared\+\_\+memory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}file\+\_\+reader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}determinant\+\_\+calculation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_aba21db599a8fe4ea7ad366cd39db3361}\label{main_8c_aba21db599a8fe4ea7ad366cd39db3361}} 
+\#define {\bfseries NS\+\_\+\+PER\+\_\+\+SECOND}~1000000000
+\begin{DoxyCompactList}\small\item\em number of nano seconds in a second \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_aded48e3ee48bc2a40d9c0de042fd9efc}{start\+Workers}} (int n\+Determinant\+Workers, int n\+Reading\+Workers)
+\begin{DoxyCompactList}\small\item\em start\+Workers. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a5a0bf5bf537b1c87f1185fb54be2e8e4}\label{main_8c_a5a0bf5bf537b1c87f1185fb54be2e8e4}} 
+int {\bfseries status\+Prod} \mbox{[}N\+\_\+\+FILE\+\_\+\+READER\+\_\+\+WORKERS\mbox{]}
+\begin{DoxyCompactList}\small\item\em producer threads return status array \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a9b72ac75dcb4626d9ce1662148f07c55}\label{main_8c_a9b72ac75dcb4626d9ce1662148f07c55}} 
+int {\bfseries status\+Cons} \mbox{[}N\+\_\+\+DETERMINANT\+\_\+\+WORKERS\mbox{]}
+\begin{DoxyCompactList}\small\item\em consumer threads return status array \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Program computing the matrices inside files. 
+
+This program reads several text files whose names are provided in the command line and proceeds to compute the matrices inside each file
+
+To carry out this task 1 or more concurrent computing worker threads and reading working threads are launched.
+
+\begin{DoxyAuthor}{Author}
+João Diogo Ferreira, João Tiago Rainho -\/ April 2022 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Main thread. 
+
+The role of main thread is to get file names by processing the command line and storing them. \mbox{\Hypertarget{main_8c_aded48e3ee48bc2a40d9c0de042fd9efc}\label{main_8c_aded48e3ee48bc2a40d9c0de042fd9efc}} 
+\index{main.c@{main.c}!startWorkers@{startWorkers}}
+\index{startWorkers@{startWorkers}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{startWorkers()}{startWorkers()}}
+{\footnotesize\ttfamily int start\+Workers (\begin{DoxyParamCaption}\item[{int}]{n\+Determinant\+Workers,  }\item[{int}]{n\+Reading\+Workers }\end{DoxyParamCaption})}
+
+
+
+start\+Workers. 
+
+This function starts the worker threads and waits for their termination, when both the reading threads and the determinant computation threads finish their lifecycle, it prints the results. 

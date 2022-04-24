@@ -1,0 +1,40 @@
+\hypertarget{shared__memory_8h_source}{}\doxysection{shared\+\_\+memory.\+h}
+\label{shared__memory_8h_source}\index{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/shared\_memory.h@{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/shared\_memory.h}}
+\mbox{\hyperlink{shared__memory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SHARED\_MEMORY\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SHARED\_MEMORY\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}fifo.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{16 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structsFileHandler}{sFileHandler}} \{}
+\DoxyCodeLine{17     \textcolor{keywordtype}{char} * fileName;}
+\DoxyCodeLine{18     \textcolor{keywordtype}{double} * determinants;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nMatrices;}
+\DoxyCodeLine{20     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} order;}
+\DoxyCodeLine{21 \} \mbox{\hyperlink{shared__memory_8h_af8e544086e7d1533fd43bf27b24265f3}{FileHandler}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{32 \textcolor{keywordtype}{void} \mbox{\hyperlink{shared__memory_8h_aabcfe20efc166bc1c2ce9c6cdaba57e3}{sm\_init}}(\textcolor{keywordtype}{char} ** fileNames, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} fileCount);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{44 \textcolor{keyword}{extern} \textcolor{keywordtype}{bool} \mbox{\hyperlink{shared__memory_8h_ad20b72f639126f5d6b19e2962291c9e1}{sm\_getFile}}(\mbox{\hyperlink{structsFileHandler}{FileHandler}} ** fileHandler, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} * fileIdx);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{54 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{shared__memory_8h_ac84a95ce5d883dbf7eb32a06f0477f64}{sm\_addMatrix}}(\mbox{\hyperlink{structsMatrixHandler}{MatrixHandler}} matrixHandler);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{64 \textcolor{keyword}{extern} \textcolor{keywordtype}{bool} \mbox{\hyperlink{shared__memory_8h_a3cb2c3cca47688261a4758daadf07508}{sm\_getMatrix}}(\mbox{\hyperlink{structsMatrixHandler}{MatrixHandler}} * matrixHandler);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{75 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{shared__memory_8h_a53e2188e8d360ad804db448d81a6cfad}{sm\_registerResult}}(\mbox{\hyperlink{structsMatrixHandler}{MatrixHandler}} * matrixHandler, \textcolor{keywordtype}{double} result);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{84 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{shared__memory_8h_a1797ba5e94a1f43e2d8a3c9fda3c8f43}{sm\_getResults}}(\mbox{\hyperlink{structsFileHandler}{FileHandler}} ** results);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{87 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{shared__memory_8h_afb395dbce441e065c2818ebd8eb2030d}{sm\_close}}();}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

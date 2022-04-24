@@ -1,0 +1,151 @@
+\hypertarget{shared__memory_8h}{}\doxysection{/\+Users/tiagorainho/\+Desktop/\+University/\+Masters/2/\+CLE/\+Pratica/assignment 1/\+Matrix-\/\+Determinant-\/\+Computing/src/shared\+\_\+memory.h File Reference}
+\label{shared__memory_8h}\index{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/shared\_memory.h@{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/shared\_memory.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}fifo.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsFileHandler}{s\+File\+Handler}}
+\begin{DoxyCompactList}\small\item\em Represents the File\+Handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{shared__memory_8h_af8e544086e7d1533fd43bf27b24265f3}\label{shared__memory_8h_af8e544086e7d1533fd43bf27b24265f3}} 
+typedef struct \mbox{\hyperlink{structsFileHandler}{s\+File\+Handler}} {\bfseries File\+Handler}
+\begin{DoxyCompactList}\small\item\em Represents the File\+Handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{shared__memory_8h_aabcfe20efc166bc1c2ce9c6cdaba57e3}{sm\+\_\+init}} (char $\ast$$\ast$file\+Names, unsigned int file\+Count)
+\begin{DoxyCompactList}\small\item\em Initiates the structure. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{shared__memory_8h_ad20b72f639126f5d6b19e2962291c9e1}{sm\+\_\+get\+File}} (\mbox{\hyperlink{shared__memory_8h_af8e544086e7d1533fd43bf27b24265f3}{File\+Handler}} $\ast$$\ast$file\+Handler, unsigned int $\ast$file\+Idx)
+\begin{DoxyCompactList}\small\item\em Fetches a File from the File\+Handlers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shared__memory_8h_ac84a95ce5d883dbf7eb32a06f0477f64}{sm\+\_\+add\+Matrix}} (\mbox{\hyperlink{structsMatrixHandler}{Matrix\+Handler}} matrix\+Handler)
+\begin{DoxyCompactList}\small\item\em Adds a Matrix\+Handler to the Fifo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{shared__memory_8h_a3cb2c3cca47688261a4758daadf07508}{sm\+\_\+get\+Matrix}} (\mbox{\hyperlink{structsMatrixHandler}{Matrix\+Handler}} $\ast$matrix\+Handler)
+\begin{DoxyCompactList}\small\item\em Fetches a Matrix\+Handler from the Fifo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shared__memory_8h_a53e2188e8d360ad804db448d81a6cfad}{sm\+\_\+register\+Result}} (\mbox{\hyperlink{structsMatrixHandler}{Matrix\+Handler}} $\ast$matrix\+Handler, double result)
+\begin{DoxyCompactList}\small\item\em Registers the result on the File\+Handler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shared__memory_8h_a1797ba5e94a1f43e2d8a3c9fda3c8f43}{sm\+\_\+get\+Results}} (\mbox{\hyperlink{shared__memory_8h_af8e544086e7d1533fd43bf27b24265f3}{File\+Handler}} $\ast$$\ast$results)
+\begin{DoxyCompactList}\small\item\em Get results from all the File\+Handlers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{shared__memory_8h_afb395dbce441e065c2818ebd8eb2030d}\label{shared__memory_8h_afb395dbce441e065c2818ebd8eb2030d}} 
+void {\bfseries sm\+\_\+close} ()
+\begin{DoxyCompactList}\small\item\em Frees the used memory ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Where the files syncronize and there is assured thread safety 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shared__memory_8h_ac84a95ce5d883dbf7eb32a06f0477f64}\label{shared__memory_8h_ac84a95ce5d883dbf7eb32a06f0477f64}} 
+\index{shared\_memory.h@{shared\_memory.h}!sm\_addMatrix@{sm\_addMatrix}}
+\index{sm\_addMatrix@{sm\_addMatrix}!shared\_memory.h@{shared\_memory.h}}
+\doxysubsubsection{\texorpdfstring{sm\_addMatrix()}{sm\_addMatrix()}}
+{\footnotesize\ttfamily void sm\+\_\+add\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsMatrixHandler}{Matrix\+Handler}}}]{matrix\+Handler }\end{DoxyParamCaption})}
+
+
+
+Adds a Matrix\+Handler to the Fifo. 
+
+Used by the file reader thread to add the matrices
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix\+Handler} & list of names of files \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shared__memory_8h_ad20b72f639126f5d6b19e2962291c9e1}\label{shared__memory_8h_ad20b72f639126f5d6b19e2962291c9e1}} 
+\index{shared\_memory.h@{shared\_memory.h}!sm\_getFile@{sm\_getFile}}
+\index{sm\_getFile@{sm\_getFile}!shared\_memory.h@{shared\_memory.h}}
+\doxysubsubsection{\texorpdfstring{sm\_getFile()}{sm\_getFile()}}
+{\footnotesize\ttfamily bool sm\+\_\+get\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{shared__memory_8h_af8e544086e7d1533fd43bf27b24265f3}{File\+Handler}} $\ast$$\ast$}]{file\+Handler,  }\item[{unsigned int $\ast$}]{file\+Idx }\end{DoxyParamCaption})}
+
+
+
+Fetches a File from the File\+Handlers. 
+
+Used by the file reader thread to fetch which file to read the matrices from
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em file\+Handler} & Pointer to a File\+Handler used in the worker thread \\
+\hline
+\mbox{\texttt{ out}}  & {\em file\+Idx} & Index of the current file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean representing True if there is more work for the thread or False if the thread can exit. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{shared__memory_8h_a3cb2c3cca47688261a4758daadf07508}\label{shared__memory_8h_a3cb2c3cca47688261a4758daadf07508}} 
+\index{shared\_memory.h@{shared\_memory.h}!sm\_getMatrix@{sm\_getMatrix}}
+\index{sm\_getMatrix@{sm\_getMatrix}!shared\_memory.h@{shared\_memory.h}}
+\doxysubsubsection{\texorpdfstring{sm\_getMatrix()}{sm\_getMatrix()}}
+{\footnotesize\ttfamily bool sm\+\_\+get\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsMatrixHandler}{Matrix\+Handler}} $\ast$}]{matrix\+Handler }\end{DoxyParamCaption})}
+
+
+
+Fetches a Matrix\+Handler from the Fifo. 
+
+Used by the determinant computing thread
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em matrix\+Handler} & Pointer to a File\+Handler used in the worker thread \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shared__memory_8h_a1797ba5e94a1f43e2d8a3c9fda3c8f43}\label{shared__memory_8h_a1797ba5e94a1f43e2d8a3c9fda3c8f43}} 
+\index{shared\_memory.h@{shared\_memory.h}!sm\_getResults@{sm\_getResults}}
+\index{sm\_getResults@{sm\_getResults}!shared\_memory.h@{shared\_memory.h}}
+\doxysubsubsection{\texorpdfstring{sm\_getResults()}{sm\_getResults()}}
+{\footnotesize\ttfamily void sm\+\_\+get\+Results (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{shared__memory_8h_af8e544086e7d1533fd43bf27b24265f3}{File\+Handler}} $\ast$$\ast$}]{results }\end{DoxyParamCaption})}
+
+
+
+Get results from all the File\+Handlers. 
+
+Provides all the File\+Handlers it contains
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em results} & Array of File\+Handlers \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shared__memory_8h_aabcfe20efc166bc1c2ce9c6cdaba57e3}\label{shared__memory_8h_aabcfe20efc166bc1c2ce9c6cdaba57e3}} 
+\index{shared\_memory.h@{shared\_memory.h}!sm\_init@{sm\_init}}
+\index{sm\_init@{sm\_init}!shared\_memory.h@{shared\_memory.h}}
+\doxysubsubsection{\texorpdfstring{sm\_init()}{sm\_init()}}
+{\footnotesize\ttfamily void sm\+\_\+init (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{file\+Names,  }\item[{unsigned int}]{file\+Count }\end{DoxyParamCaption})}
+
+
+
+Initiates the structure. 
+
+Initiates the structure
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Names} & list of names of files \\
+\hline
+{\em file\+Count} & files length \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{shared__memory_8h_a53e2188e8d360ad804db448d81a6cfad}\label{shared__memory_8h_a53e2188e8d360ad804db448d81a6cfad}} 
+\index{shared\_memory.h@{shared\_memory.h}!sm\_registerResult@{sm\_registerResult}}
+\index{sm\_registerResult@{sm\_registerResult}!shared\_memory.h@{shared\_memory.h}}
+\doxysubsubsection{\texorpdfstring{sm\_registerResult()}{sm\_registerResult()}}
+{\footnotesize\ttfamily void sm\+\_\+register\+Result (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsMatrixHandler}{Matrix\+Handler}} $\ast$}]{matrix\+Handler,  }\item[{double}]{result }\end{DoxyParamCaption})}
+
+
+
+Registers the result on the File\+Handler. 
+
+Used by the determinant computing thread to registry its computation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix\+Handler} & Pointer to a File\+Handler \\
+\hline
+{\em result} & Computed determinant \\
+\hline
+\end{DoxyParams}
