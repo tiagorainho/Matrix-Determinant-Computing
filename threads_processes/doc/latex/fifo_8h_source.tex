@@ -1,0 +1,30 @@
+\hypertarget{fifo_8h_source}{}\doxysection{fifo.\+h}
+\label{fifo_8h_source}\index{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/fifo.h@{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/fifo.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef FIFO\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define FIFO\_H}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix_8h}{matrix.h}}"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structsMatrixHandler}{sMatrixHandler}} \{}
+\DoxyCodeLine{11     \mbox{\hyperlink{structsMatrix}{Matrix}} * matrix;}
+\DoxyCodeLine{12     \textcolor{keywordtype}{int} fileIdx;}
+\DoxyCodeLine{13     \textcolor{keywordtype}{int} matrixIdx;}
+\DoxyCodeLine{14 \} \mbox{\hyperlink{structsMatrixHandler}{MatrixHandler}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{22 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{fifo_8c_a859227d4f0bdada9b26184a4fc9d0ca5}{putMatrix}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} producerId, \mbox{\hyperlink{structsMatrixHandler}{MatrixHandler}} * matrix);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{31 \textcolor{keyword}{extern} \textcolor{keywordtype}{bool} \mbox{\hyperlink{fifo_8c_a25d3dd20a8f1db23ba4ba4213df8c43c}{getMatrix}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} receiverId, \mbox{\hyperlink{structsMatrixHandler}{MatrixHandler}} ** matrix);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{37 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{fifo_8c_ad25ddc7f6c296f23f3b656da5084b544}{doneReading}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* FIFO\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

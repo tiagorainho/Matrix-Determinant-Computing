@@ -1,0 +1,56 @@
+\hypertarget{matrix_8h}{}\doxysection{/\+Users/tiagorainho/\+Desktop/\+University/\+Masters/2/\+CLE/\+Pratica/assignment 1/\+Matrix-\/\+Determinant-\/\+Computing/src/matrix.h File Reference}
+\label{matrix_8h}\index{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/matrix.h@{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/matrix.h}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsMatrix}{s\+Matrix}}
+\begin{DoxyCompactList}\small\item\em Represents the Matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{matrix_8h_a0c461a031f2c31d6fc235d9e275b0b0a}\label{matrix_8h_a0c461a031f2c31d6fc235d9e275b0b0a}} 
+typedef struct \mbox{\hyperlink{structsMatrix}{s\+Matrix}} {\bfseries Matrix}
+\begin{DoxyCompactList}\small\item\em Represents the Matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{matrix_8h_aa9d04c4abeafa78c7c51af54562f8ec8}{print\+\_\+matrix}} (\mbox{\hyperlink{matrix_8h_a0c461a031f2c31d6fc235d9e275b0b0a}{Matrix}} $\ast$matrix)
+\begin{DoxyCompactList}\small\item\em Prints the matrix. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{matrix_8h_a1fa2ab27c7b5039d7d261d42f98193bb}{compute\+\_\+determinant}} (\mbox{\hyperlink{matrix_8h_a0c461a031f2c31d6fc235d9e275b0b0a}{Matrix}} matrix)
+\begin{DoxyCompactList}\small\item\em Computes the determinant of a matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{matrix_8h_a1fa2ab27c7b5039d7d261d42f98193bb}\label{matrix_8h_a1fa2ab27c7b5039d7d261d42f98193bb}} 
+\index{matrix.h@{matrix.h}!compute\_determinant@{compute\_determinant}}
+\index{compute\_determinant@{compute\_determinant}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{compute\_determinant()}{compute\_determinant()}}
+{\footnotesize\ttfamily double compute\+\_\+determinant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix_8h_a0c461a031f2c31d6fc235d9e275b0b0a}{Matrix}}}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Computes the determinant of a matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Matrix to be used\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double value of the determinant of the matrix given as input 
+\end{DoxyReturn}
+\mbox{\Hypertarget{matrix_8h_aa9d04c4abeafa78c7c51af54562f8ec8}\label{matrix_8h_aa9d04c4abeafa78c7c51af54562f8ec8}} 
+\index{matrix.h@{matrix.h}!print\_matrix@{print\_matrix}}
+\index{print\_matrix@{print\_matrix}!matrix.h@{matrix.h}}
+\doxysubsubsection{\texorpdfstring{print\_matrix()}{print\_matrix()}}
+{\footnotesize\ttfamily void print\+\_\+matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix_8h_a0c461a031f2c31d6fc235d9e275b0b0a}{Matrix}} $\ast$}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Prints the matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & pointer of the matrix to be printed \\
+\hline
+\end{DoxyParams}

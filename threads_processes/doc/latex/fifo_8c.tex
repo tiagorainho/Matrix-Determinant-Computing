@@ -1,0 +1,105 @@
+\hypertarget{fifo_8c}{}\doxysection{/\+Users/tiagorainho/\+Desktop/\+University/\+Masters/2/\+CLE/\+Pratica/assignment 1/\+Matrix-\/\+Determinant-\/\+Computing/src/fifo.c File Reference}
+\label{fifo_8c}\index{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/fifo.c@{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/fifo.c}}
+
+
+Problem name\+: Producers / Consumers.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}fifo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{fifo_8c_ad25ddc7f6c296f23f3b656da5084b544}{done\+Reading}} ()
+\begin{DoxyCompactList}\small\item\em Signal for the Fifo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fifo_8c_a859227d4f0bdada9b26184a4fc9d0ca5}{put\+Matrix}} (unsigned int prod\+Id, \mbox{\hyperlink{structsMatrixHandler}{Matrix\+Handler}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Store a value in the data transfer region. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{fifo_8c_a25d3dd20a8f1db23ba4ba4213df8c43c}{get\+Matrix}} (unsigned int cons\+Id, \mbox{\hyperlink{structsMatrixHandler}{Matrix\+Handler}} $\ast$$\ast$val)
+\begin{DoxyCompactList}\small\item\em Get a value from the data transfer region. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fifo_8c_a5a0bf5bf537b1c87f1185fb54be2e8e4}\label{fifo_8c_a5a0bf5bf537b1c87f1185fb54be2e8e4}} 
+int {\bfseries status\+Prod} \mbox{[}N\+\_\+\+FILE\+\_\+\+READER\+\_\+\+WORKERS\mbox{]}
+\begin{DoxyCompactList}\small\item\em producer threads return status array \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{fifo_8c_a9b72ac75dcb4626d9ce1662148f07c55}\label{fifo_8c_a9b72ac75dcb4626d9ce1662148f07c55}} 
+int {\bfseries status\+Cons} \mbox{[}N\+\_\+\+DETERMINANT\+\_\+\+WORKERS\mbox{]}
+\begin{DoxyCompactList}\small\item\em consumer threads return status array \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Problem name\+: Producers / Consumers. 
+
+(implementation file)
+
+Synchronization based on monitors. Both threads and the monitor are implemented using the pthread library which enables the creation of a monitor of the Lampson / Redell type.
+
+Data transfer region implemented as a monitor.
+
+Definition of the operations carried out by the producers / consumers\+: \begin{DoxyItemize}
+\item put\+Val \item get\+Val.\end{DoxyItemize}
+\begin{DoxyAuthor}{Author}
+António Rui Borges -\/ March 2019 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fifo_8c_ad25ddc7f6c296f23f3b656da5084b544}\label{fifo_8c_ad25ddc7f6c296f23f3b656da5084b544}} 
+\index{fifo.c@{fifo.c}!doneReading@{doneReading}}
+\index{doneReading@{doneReading}!fifo.c@{fifo.c}}
+\doxysubsubsection{\texorpdfstring{doneReading()}{doneReading()}}
+{\footnotesize\ttfamily void done\+Reading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Signal for the Fifo. 
+
+This signal represents that there is no more matrices available to insert into the memory. \mbox{\Hypertarget{fifo_8c_a25d3dd20a8f1db23ba4ba4213df8c43c}\label{fifo_8c_a25d3dd20a8f1db23ba4ba4213df8c43c}} 
+\index{fifo.c@{fifo.c}!getMatrix@{getMatrix}}
+\index{getMatrix@{getMatrix}!fifo.c@{fifo.c}}
+\doxysubsubsection{\texorpdfstring{getMatrix()}{getMatrix()}}
+{\footnotesize\ttfamily bool get\+Matrix (\begin{DoxyParamCaption}\item[{unsigned int}]{cons\+Id,  }\item[{\mbox{\hyperlink{structsMatrixHandler}{Matrix\+Handler}} $\ast$$\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Get a value from the data transfer region. 
+
+Fetches a matrix from the fifo.
+
+Operation carried out by the consumers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cons\+Id} & consumer identification\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fifo_8c_a859227d4f0bdada9b26184a4fc9d0ca5}\label{fifo_8c_a859227d4f0bdada9b26184a4fc9d0ca5}} 
+\index{fifo.c@{fifo.c}!putMatrix@{putMatrix}}
+\index{putMatrix@{putMatrix}!fifo.c@{fifo.c}}
+\doxysubsubsection{\texorpdfstring{putMatrix()}{putMatrix()}}
+{\footnotesize\ttfamily void put\+Matrix (\begin{DoxyParamCaption}\item[{unsigned int}]{prod\+Id,  }\item[{\mbox{\hyperlink{structsMatrixHandler}{Matrix\+Handler}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Store a value in the data transfer region. 
+
+Inserts a matrix inside the fifo.
+
+Operation carried out by the producers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em prod\+Id} & producer identification \\
+\hline
+{\em val} & value to be stored \\
+\hline
+\end{DoxyParams}

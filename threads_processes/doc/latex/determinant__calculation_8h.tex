@@ -1,0 +1,44 @@
+\hypertarget{determinant__calculation_8h}{}\doxysection{/\+Users/tiagorainho/\+Desktop/\+University/\+Masters/2/\+CLE/\+Pratica/assignment 1/\+Matrix-\/\+Determinant-\/\+Computing/src/determinant\+\_\+calculation.h File Reference}
+\label{determinant__calculation_8h}\index{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/determinant\_calculation.h@{/Users/tiagorainho/Desktop/University/Masters/2/CLE/Pratica/assignment 1/Matrix-\/Determinant-\/Computing/src/determinant\_calculation.h}}
+
+
+Determinant Computing Thread Worker implementation.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{determinant__calculation_8h_a3138be4c56bb735b1f8290f2ed347a8a}{compute\+\_\+determinant\+\_\+thread\+\_\+worker}} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em worker which computes matrices \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Determinant Computing Thread Worker implementation. 
+
+This thread fetches matrices and proceeds to compute the matrices inside each file returning the result.
+
+The thread continues its work until there is no more matrices available
+
+\begin{DoxyAuthor}{Author}
+João Diogo Ferreira, João Tiago Rainho -\/ April 2022 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{determinant__calculation_8h_a3138be4c56bb735b1f8290f2ed347a8a}\label{determinant__calculation_8h_a3138be4c56bb735b1f8290f2ed347a8a}} 
+\index{determinant\_calculation.h@{determinant\_calculation.h}!compute\_determinant\_thread\_worker@{compute\_determinant\_thread\_worker}}
+\index{compute\_determinant\_thread\_worker@{compute\_determinant\_thread\_worker}!determinant\_calculation.h@{determinant\_calculation.h}}
+\doxysubsubsection{\texorpdfstring{compute\_determinant\_thread\_worker()}{compute\_determinant\_thread\_worker()}}
+{\footnotesize\ttfamily void $\ast$ compute\+\_\+determinant\+\_\+thread\+\_\+worker (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+worker which computes matrices 
+
+Operation carried out by worker thread. Reads the matrices from the fifo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & Worker thread id \\
+\hline
+\end{DoxyParams}
